@@ -1,0 +1,31 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model User {
+  id            String            @id
+  email         String           @unique
+  bloodSugarRecords BloodSugarRecord[]
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+}
+
+model BloodSugarRecord {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  date        String
+  time        String
+  bloodSugar  Float
+  age         String
+  type        String
+  description String
+  condition   String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+} 
