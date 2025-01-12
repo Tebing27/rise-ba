@@ -85,7 +85,7 @@ export default function Hero({ userId }: HeroProps) {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              Halo, Selamat Datang di RiseBar Tracker App
+              Halo, Selamat Datang di Rise and Care Tracker App
               <span className="text-green-500 block mt-2"> #JagaKesehatanAnda</span>
             </motion.h1>
             <motion.p
